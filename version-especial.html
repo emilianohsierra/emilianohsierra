@@ -47,12 +47,13 @@
   <script>
     function saludarPorNombre() {
       var nombre = document.getElementById("nombreUsuario").value;
+      var clave = nombre.toLowerCase().trim();   // normaliza: minúsculas y sin espacios sobrantes
 
-      if (nombre === "") {
+      if (clave === "") {
         document.getElementById("saludo").textContent = "Bro ponte trucha escribe tu nombre!";
-      } else if (nombre === "Emiliano") {
+      } else if (clave === "emiliano") {
         document.getElementById("saludo").textContent = "¡Esposo de Silvana😌!";
-      } else if (nombre === "Silvana") {
+      } else if (clave === "silvana") {
         document.getElementById("saludo").textContent = "Te amo ❤️, saludos al Ivancin pedorrin ";
       } else {
         document.getElementById("saludo").textContent = "Que bien te ves " + nombre + " eres lo maximo bro";
