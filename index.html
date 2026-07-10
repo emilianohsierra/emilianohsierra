@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emiliano H. Sierra · Portafolio Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- ===== NAVEGACIÓN ===== -->
+  <nav class="navbar">
+    <span class="logo">Emiliano H. Sierra</span>
+    <div class="nav-links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO / PRESENTACIÓN ===== -->
+  <header class="hero">
+    <img src="foto.jpg" alt="Foto de Emiliano H. Sierra" class="foto-perfil">
+    <p class="eyebrow">Desarrollo de software asistido por IA</p>
+    <h1>Emiliano H. Sierra</h1>
+    <p class="subtitulo">Ingeniero civil en transición al desarrollo de software con IA · Servicio al cliente bilingüe</p>
+    <p class="hero-desc">
+      Apasionado por la tecnología y el trabajo remoto. Construyo aplicaciones web reales
+      combinando fundamentos de programación con herramientas de inteligencia artificial.
+    </p>
+    <div class="hero-acciones">
+      <a href="#proyectos" class="boton boton-primario">Ver proyectos</a>
+      <a href="#contacto" class="boton boton-secundario">Contáctame</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="seccion">
+      <h2>Sobre mí</h2>
+      <p class="texto-seccion">
+        Soy ingeniero civil de formación y hoy dirijo mi carrera hacia el desarrollo de software
+        enfocado en inteligencia artificial, un campo que me apasiona junto con la tecnología y el
+        trabajo remoto. Cuento con 4 años de experiencia en el área de costos en ingeniería y
+        3 años y medio en servicio al cliente bilingüe en American Airlines, donde fortalecí mi
+        comunicación, atención al detalle y orientación a resultados. Hoy combino esa experiencia
+        con nuevas habilidades técnicas para construir aplicaciones reales.
+      </p>
+    </section>
+
+    <!-- ===== HABILIDADES ===== -->
+    <section id="habilidades" class="seccion">
+      <h2>Habilidades</h2>
+      <div class="grupos-habilidades">
+        <div class="grupo">
+          <h3>Técnicas</h3>
+          <ul class="lista-habilidades">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Desarrollo asistido por IA</li>
+            <li>Git &amp; GitHub <span class="badge">en progreso</span></li>
+          </ul>
+        </div>
+        <div class="grupo">
+          <h3>Profesionales</h3>
+          <ul class="lista-habilidades">
+            <li>Servicio al cliente bilingüe (ES / EN)</li>
+            <li>Análisis de costos en ingeniería</li>
+            <li>Comunicación efectiva</li>
+            <li>Trabajo remoto</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROYECTOS ===== -->
+    <section id="proyectos" class="seccion">
+      <h2>Proyectos</h2>
+      <div class="grid-proyectos">
+
+        <article class="tarjeta-proyecto">
+          <h3>Portafolio Personal</h3>
+          <p class="tarjeta-desc">Sitio web personal desarrollado con HTML, CSS y JavaScript, y desplegado en producción.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <a href="https://emilianohsierra.netlify.app" target="_blank" class="enlace-proyecto">Ver en vivo →</a>
+        </article>
+
+        <article class="tarjeta-proyecto">
+          <h3>Saludador Interactivo</h3>
+          <p class="tarjeta-desc">Componente en JavaScript que genera un saludo personalizado a partir del nombre del usuario.</p>
+          <input id="nombreUsuario" type="text" placeholder="Escribe tu nombre">
+          <button onclick="saludarPorNombre()">Generar saludo</button>
+          <p id="saludo" class="resultado"></p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="seccion">
+      <h2>Contacto</h2>
+      <p class="texto-seccion">¿Te interesa colaborar o conocer más sobre mi trabajo? Estoy disponible:</p>
+      <div class="contacto-datos">
+        <a href="mailto:Ing.emilianoh.sierra@hotmail.com" class="boton boton-primario">📧 Escríbeme</a>
+        <a href="https://www.linkedin.com/in/gaspar-emiliano-lizarraga-h-sierra-90b91741b" target="_blank" class="enlace-simple">LinkedIn</a>
+        <a href="https://github.com/emilianohsierra" target="_blank" class="enlace-simple">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="footer">
+    <p>© 2026 Emiliano H. Sierra · Portafolio profesional</p>
+  </footer>
+
+  <!-- ===== JAVASCRIPT (saludador) ===== -->
+  <script>
+    function saludarPorNombre() {
+      var nombre = document.getElementById("nombreUsuario").value;
+
+      if (nombre === "") {
+        document.getElementById("saludo").textContent = "Por favor, escribe tu nombre.";
+      } else {
+        document.getElementById("saludo").textContent = "¡Hola, " + nombre + "! Gracias por visitar mi portafolio.";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+/* ============================================================
+   PORTAFOLIO · EMILIANO H. SIERRA
+   Tema profesional claro. Organizado por secciones.
+   ============================================================ */
+
+/* --- Paleta de colores (variables reutilizables) --- */
+:root {
+  --fondo:         #ffffff;   /* blanco principal              */
+  --fondo-alt:     #f8fafc;   /* gris muy claro (pastillas)    */
+  --texto:         #0f172a;   /* casi negro (títulos)          */
+  --texto-suave:   #475569;   /* gris (párrafos)               */
+  --acento:        #2563eb;   /* azul profesional (acento)     */
+  --acento-oscuro: #1d4ed8;   /* azul oscuro (hover)           */
+  --borde:         #e2e8f0;   /* gris claro (bordes)           */
+  --sombra: 0 1px 3px rgba(15, 23, 42, 0.06), 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+/* --- Base --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto-suave);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Barra de navegación (fija arriba) --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borde);
+}
+.logo { font-weight: 700; color: var(--texto); font-size: 18px; letter-spacing: -0.02em; }
+.nav-links a {
+  color: var(--texto-suave);
+  text-decoration: none;
+  margin-left: 28px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--acento); }
+
+/* --- Hero / presentación --- */
+.hero { text-align: center; padding: 110px 24px 90px; max-width: 760px; margin: 0 auto; }
+.foto-perfil {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;        /* la hace circular */
+  object-fit: cover;         /* recorta la foto sin deformarla */
+  border: 4px solid #ffffff;
+  box-shadow: var(--sombra);
+  margin: 0 auto 28px;
+  display: block;
+}
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--acento);
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--texto);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.subtitulo { font-size: 20px; font-weight: 500; color: var(--texto); margin-bottom: 20px; }
+.hero-desc { font-size: 18px; margin-bottom: 36px; }
+.hero-acciones { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* --- Botones reutilizables --- */
+.boton {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+.boton-primario { background-color: var(--acento); color: #ffffff; }
+.boton-primario:hover { background-color: var(--acento-oscuro); }
+.boton-secundario { color: var(--texto); border: 1px solid var(--borde); background: #ffffff; }
+.boton-secundario:hover { border-color: var(--acento); color: var(--acento); }
+
+/* --- Secciones --- */
+.seccion { max-width: 860px; margin: 0 auto; padding: 80px 24px; border-top: 1px solid var(--borde); }
+.seccion h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--texto);
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+.texto-seccion { font-size: 17px; max-width: 720px; }
+
+/* --- Habilidades (dos grupos + pastillas) --- */
+.grupos-habilidades { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+.grupo h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--texto-suave);
+  margin-bottom: 16px;
+}
+.lista-habilidades { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.lista-habilidades li {
+  background-color: var(--fondo-alt);
+  color: var(--texto);
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  font-size: 14px;
+  font-weight: 500;
+}
+.badge { font-size: 11px; color: var(--acento); font-weight: 600; }
+
+/* --- Proyectos (cuadrícula de tarjetas) --- */
+.grid-proyectos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.tarjeta-proyecto {
+  background-color: #ffffff;
+  padding: 28px;
+  border-radius: 14px;
+  border: 1px solid var(--borde);
+  box-shadow: var(--sombra);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.tarjeta-proyecto:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15, 23, 42, 0.10); }
+.tarjeta-proyecto h3 { font-size: 20px; font-weight: 700; color: var(--texto); margin-bottom: 10px; }
+.tarjeta-desc { font-size: 15px; margin-bottom: 16px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tags span { font-size: 12px; font-weight: 600; color: var(--acento); background: #eff6ff; padding: 4px 10px; border-radius: 6px; }
+.enlace-proyecto { color: var(--acento); font-weight: 600; text-decoration: none; }
+.enlace-proyecto:hover { text-decoration: underline; }
+
+/* Campos del demo interactivo */
+.tarjeta-proyecto input {
+  width: 100%;
+  padding: 11px 14px;
+  margin: 6px 0 12px;
+  border-radius: 8px;
+  border: 1px solid var(--borde);
+  font-size: 15px;
+  font-family: inherit;
+}
+.tarjeta-proyecto input:focus { outline: none; border-color: var(--acento); }
+.tarjeta-proyecto button {
+  background-color: var(--acento);
+  color: #ffffff;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.tarjeta-proyecto button:hover { background-color: var(--acento-oscuro); }
+.resultado { margin-top: 14px; color: var(--texto); font-weight: 500; min-height: 24px; }
+
+/* --- Contacto --- */
+.contacto-datos { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 24px; }
+.enlace-simple { color: var(--texto-suave); text-decoration: none; font-weight: 500; }
+.enlace-simple:hover { color: var(--acento); }
+
+/* --- Pie de página --- */
+.footer { text-align: center; padding: 40px 24px; color: var(--texto-suave); font-size: 14px; border-top: 1px solid var(--borde); }
+
+/* --- Responsive: teléfonos --- */
+@media (max-width: 600px) {
+  .navbar { padding: 14px 20px; }
+  .nav-links a { margin-left: 16px; font-size: 14px; }
+  .hero { padding: 70px 20px 60px; }
+  .hero h1 { font-size: 40px; }
+  .seccion { padding: 56px 20px; }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emiliano · Versión Divertida 😎</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- Barra: con enlace de regreso al portafolio profesional -->
+  <nav class="navbar">
+    <span class="logo">Emiliano 😎</span>
+    <div class="nav-links">
+      <a href="index.html">← Volver al portafolio pro</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <img src="https://mcdn.wallpapersafari.com/medium/49/46/zAP80L.jpg" alt="Imagen de Emiliano" class="foto-perfil">
+    <h1>¡Hola! soy Emiliano 👋</h1>
+    <p class="subtitulo">Aprendiendo a programar con IA, una hora cada día 🚀</p>
+    <p class="hero-desc">Esta es mi zona divertida, donde el código tiene mi estilo. 😄</p>
+  </header>
+
+  <main>
+    <section class="seccion">
+      <h2>Mi Saludador (versión con actitud) 😎</h2>
+      <div class="grid-proyectos">
+        <article class="tarjeta-proyecto">
+          <p class="tarjeta-desc">Escribe un nombre y mira qué te responde. Prueba con "Emiliano" o "Silvana". 👀</p>
+          <input id="nombreUsuario" type="text" placeholder="Escribe un nombre">
+          <button onclick="saludarPorNombre()">Saludar</button>
+          <p id="saludo" class="resultado"></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Versión especial · Hecha con cariño por Emiliano para Silvana ❤️</p>
+  </footer>
+
+  <!-- Tu saludador original, con todos tus mensajes divertidos intactos -->
+  <script>
+    function saludarPorNombre() {
+      var nombre = document.getElementById("nombreUsuario").value;
+
+      if (nombre === "") {
+        document.getElementById("saludo").textContent = "Bro ponte trucha escribe tu nombre!";
+      } else if (nombre === "Emiliano") {
+        document.getElementById("saludo").textContent = "¡Esposo de Silvana😌!";
+      } else if (nombre === "Silvana") {
+        document.getElementById("saludo").textContent = "Te amo ❤️, saludos al Ivancin pedorrin ";
+      } else {
+        document.getElementById("saludo").textContent = "Que bien te ves " + nombre + " eres lo maximo bro";
+      }
+    }
+  </script>
+
+</body>
+</html>
