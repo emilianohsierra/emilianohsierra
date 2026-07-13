@@ -3,246 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asistente de Soporte con IA · Emiliano H. Sierra</title>
+  <title>Emiliano H. Sierra · Portafolio Profesional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
-  <!-- Formas decorativas de fondo (efecto IA) -->
-  <div class="deco deco-1" aria-hidden="true"></div>
-  <div class="deco deco-2" aria-hidden="true"></div>
+  <!-- ===== NAVEGACIÓN ===== -->
+  <nav class="navbar">
+    <span class="logo">Emiliano H. Sierra</span>
+    <div class="nav-links">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+  </nav>
 
-  <!-- Botón de modo oscuro -->
-  <button id="btnTema" class="btn-tema" onclick="cambiarTema()" title="Cambiar tema" aria-label="Cambiar tema claro u oscuro">🌙</button>
-
+  <!-- ===== HERO / PRESENTACIÓN ===== -->
   <header class="hero">
-    <span class="eyebrow">✨ Impulsado por Inteligencia Artificial</span>
-    <h1>¿En qué podemos ayudarte?</h1>
-    <p class="subtitulo">Pega el mensaje de un cliente y genera una respuesta profesional al instante.</p>
+    <img src="foto.jpg" alt="Foto de Emiliano H. Sierra" class="foto-perfil">
+    <p class="eyebrow">Desarrollo de software asistido por IA</p>
+    <h1>Emiliano H. Sierra</h1>
+    <p class="subtitulo">Ingeniero civil en transición al desarrollo de software con IA · Servicio al cliente bilingüe</p>
+    <p class="hero-desc">
+      Apasionado por la tecnología y el trabajo remoto. Construyo aplicaciones web reales
+      combinando fundamentos de programación con herramientas de inteligencia artificial.
+    </p>
+    <div class="hero-acciones">
+      <a href="#proyectos" class="boton boton-primario">Ver proyectos</a>
+      <a href="#contacto" class="boton boton-secundario">Contáctame</a>
+    </div>
   </header>
 
-  <main class="contenedor">
+  <main>
+    <!-- ===== SOBRE MÍ ===== -->
+    <section id="sobre-mi" class="seccion">
+      <h2>Sobre mí</h2>
+      <p class="texto-seccion">
+        Soy ingeniero civil de formación y hoy dirijo mi carrera hacia el desarrollo de software
+        enfocado en inteligencia artificial, un campo que me apasiona junto con la tecnología y el
+        trabajo remoto. Cuento con 4 años de experiencia en el área de costos en ingeniería y
+        3 años y medio en servicio al cliente bilingüe en American Airlines, donde fortalecí mi
+        comunicación, atención al detalle y orientación a resultados. Hoy combino esa experiencia
+        con nuevas habilidades técnicas para construir aplicaciones reales.
+      </p>
+    </section>
 
-    <!-- Caja principal -->
-    <section class="panel">
-      <label for="mensajeCliente">Mensaje del cliente</label>
-      <textarea id="mensajeCliente" rows="5" placeholder="Escribe tu pregunta..."></textarea>
-
-      <div class="opciones">
-        <div class="campo">
-          <label for="idioma">Idioma</label>
-          <select id="idioma">
-            <option value="es">Español</option>
-            <option value="en">Inglés</option>
-          </select>
+    <!-- ===== HABILIDADES ===== -->
+    <section id="habilidades" class="seccion">
+      <h2>Habilidades</h2>
+      <div class="grupos-habilidades">
+        <div class="grupo">
+          <h3>Técnicas</h3>
+          <ul class="lista-habilidades">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Desarrollo asistido por IA</li>
+            <li>Git &amp; GitHub <span class="badge">en progreso</span></li>
+          </ul>
         </div>
-        <div class="campo">
-          <label for="tono">Tono</label>
-          <select id="tono">
-            <option value="Formal">Formal</option>
-            <option value="Amigable">Amigable</option>
-            <option value="Empático">Empático</option>
-            <option value="Directo y conciso">Directo</option>
-          </select>
+        <div class="grupo">
+          <h3>Profesionales</h3>
+          <ul class="lista-habilidades">
+            <li>Servicio al cliente bilingüe (ES / EN)</li>
+            <li>Análisis de costos en ingeniería</li>
+            <li>Comunicación efectiva</li>
+            <li>Trabajo remoto</li>
+          </ul>
         </div>
-        <div class="campo">
-          <label for="longitud">Longitud</label>
-          <select id="longitud">
-            <option value="detallada">Detallada</option>
-            <option value="breve">Breve</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="botones-form">
-        <button id="btnGenerar" class="btn-primario" onclick="generarRespuesta()">Preguntar</button>
-        <button class="btn-secundario" onclick="limpiar()">Limpiar</button>
       </div>
     </section>
 
-    <!-- Ejemplos rápidos (cuadrícula) -->
-    <section class="ejemplos">
-      <h2 class="titulo-seccion">Ejemplos rápidos</h2>
-      <div class="grid-ejemplos">
-        <button class="tarjeta-ejemplo" onclick="usarEjemplo('Mi vuelo se canceló y nadie me avisó. Necesito una solución urgente.')">
-          <span class="ej-icon">✈️</span>
-          <span class="ej-texto">Vuelo cancelado</span>
-        </button>
-        <button class="tarjeta-ejemplo" onclick="usarEjemplo('Quiero solicitar el reembolso de mi compra, el producto llegó dañado.')">
-          <span class="ej-icon">💳</span>
-          <span class="ej-texto">Reembolso</span>
-        </button>
-        <button class="tarjeta-ejemplo" onclick="usarEjemplo('Llevo tres días esperando respuesta y nadie me ayuda. Estoy muy molesto.')">
-          <span class="ej-icon">😠</span>
-          <span class="ej-texto">Queja de servicio</span>
-        </button>
-        <button class="tarjeta-ejemplo" onclick="usarEjemplo('Tengo una duda sobre un cargo en mi factura que no reconozco.')">
-          <span class="ej-icon">🧾</span>
-          <span class="ej-texto">Duda de factura</span>
-        </button>
+    <!-- ===== PROYECTOS ===== -->
+    <section id="proyectos" class="seccion">
+      <h2>Proyectos</h2>
+      <div class="grid-proyectos">
+
+        <article class="tarjeta-proyecto">
+          <h3>🤖 Asistente de Soporte con IA</h3>
+          <p class="tarjeta-desc">Aplicación con inteligencia artificial (Claude) que redacta respuestas de soporte al cliente profesionales y bilingües. Frontend + backend serverless + modo oscuro.</p>
+          <div class="tags"><span>Inteligencia Artificial</span><span>Netlify Functions</span><span>API</span></div>
+          <a href="https://asistente-virt.netlify.app" target="_blank" class="enlace-proyecto">Ver en vivo →</a>
+        </article>
+
+        <article class="tarjeta-proyecto">
+          <h3>Portafolio Personal</h3>
+          <p class="tarjeta-desc">Sitio web personal desarrollado con HTML, CSS y JavaScript, y desplegado en producción.</p>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <a href="https://emilianohsierra.netlify.app" target="_blank" class="enlace-proyecto">Ver en vivo →</a>
+        </article>
+
+        <article class="tarjeta-proyecto">
+          <h3>Saludador Interactivo</h3>
+          <p class="tarjeta-desc">Componente en JavaScript que genera un saludo personalizado a partir del nombre del usuario.</p>
+          <input id="nombreUsuario" type="text" placeholder="Escribe tu nombre">
+          <button onclick="saludarPorNombre()">Generar saludo</button>
+          <p id="saludo" class="resultado"></p>
+        </article>
+
       </div>
     </section>
 
-    <!-- Respuesta -->
-    <section id="tarjetaResultado" class="panel resultado-card oculto" aria-live="polite">
-      <div class="resultado-head">
-        <span class="resultado-titulo">✨ Respuesta generada</span>
-        <div class="resultado-acciones">
-          <button id="btnCopiar" class="btn-mini" onclick="copiarRespuesta()">📋 Copiar</button>
-          <button class="btn-mini" onclick="generarRespuesta()">🔄 Regenerar</button>
-        </div>
+    <!-- ===== CONTACTO ===== -->
+    <section id="contacto" class="seccion">
+      <h2>Contacto</h2>
+      <p class="texto-seccion">¿Te interesa colaborar o conocer más sobre mi trabajo? Estoy disponible:</p>
+      <div class="contacto-datos">
+        <a href="mailto:Ing.emilianoh.sierra@hotmail.com" class="boton boton-primario">📧 Escríbeme</a>
+        <a href="https://www.linkedin.com/in/gaspar-emiliano-lizarraga-h-sierra-90b91741b" target="_blank" class="enlace-simple">LinkedIn</a>
+        <a href="https://github.com/emilianohsierra" target="_blank" class="enlace-simple">GitHub</a>
       </div>
-      <div id="respuesta" class="respuesta"></div>
     </section>
-
-    <!-- Historial -->
-    <section id="tarjetaHistorial" class="panel historial-card oculto">
-      <div class="resultado-head">
-        <span class="resultado-titulo">📜 Historial</span>
-        <button class="btn-mini" onclick="limpiarHistorial()">🗑️ Limpiar</button>
-      </div>
-      <div id="listaHistorial" class="lista-historial"></div>
-    </section>
-
   </main>
 
-  <footer class="pie">
-    <p>Proyecto de Emiliano H. Sierra · <a href="https://emilianohsierra.netlify.app" target="_blank">Volver al portafolio</a></p>
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="footer">
+    <p>© 2026 Emiliano H. Sierra · Portafolio profesional</p>
   </footer>
 
+  <!-- ===== JAVASCRIPT (saludador) ===== -->
   <script>
-    // ===== Generar respuesta =====
-    async function generarRespuesta() {
-      var mensaje = document.getElementById("mensajeCliente").value.trim();
-      var idioma = document.getElementById("idioma").value;
-      var tono = document.getElementById("tono").value;
-      var longitud = document.getElementById("longitud").value;
-      var caja = document.getElementById("respuesta");
-      var tarjeta = document.getElementById("tarjetaResultado");
-      var boton = document.getElementById("btnGenerar");
+    function saludarPorNombre() {
+      var nombre = document.getElementById("nombreUsuario").value;
 
-      tarjeta.classList.remove("oculto");
-
-      if (mensaje === "") {
-        caja.textContent = "⚠️ Primero escribe o pega el mensaje del cliente.";
-        return;
-      }
-
-      boton.disabled = true;
-      boton.textContent = "Generando...";
-      // Indicador de carga elegante (tres puntitos animados)
-      caja.innerHTML = '<span class="puntos"><span></span><span></span><span></span></span>';
-
-      try {
-        var res = await fetch("/.netlify/functions/generar-respuesta", {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ mensaje: mensaje, idioma: idioma, tono: tono, longitud: longitud })
-        });
-        var data = await res.json();
-        mostrarRespuesta(data.respuesta);
-        guardarEnHistorial({ respuesta: data.respuesta, idioma: idioma, tono: tono });
-      } catch (error) {
-        caja.textContent = "❌ Hubo un error de conexión. Intenta de nuevo.";
-      } finally {
-        boton.disabled = false;
-        boton.textContent = "Preguntar";
+      if (nombre === "") {
+        document.getElementById("saludo").textContent = "Por favor, escribe tu nombre.";
+      } else {
+        document.getElementById("saludo").textContent = "¡Hola, " + nombre + "! Gracias por visitar mi portafolio.";
       }
     }
-
-    function mostrarRespuesta(texto) {
-      var caja = document.getElementById("respuesta");
-      caja.textContent = texto;
-      var card = document.getElementById("tarjetaResultado");
-      card.classList.remove("oculto");
-      // Reinicia la animación de aparición
-      card.classList.remove("aparece");
-      void card.offsetWidth;
-      card.classList.add("aparece");
-    }
-
-    function usarEjemplo(texto) {
-      var caja = document.getElementById("mensajeCliente");
-      caja.value = texto;
-      caja.focus();
-    }
-
-    function copiarRespuesta() {
-      var texto = document.getElementById("respuesta").textContent;
-      var btn = document.getElementById("btnCopiar");
-      navigator.clipboard.writeText(texto).then(function () {
-        btn.textContent = "✅ ¡Copiado!";
-        setTimeout(function () { btn.textContent = "📋 Copiar"; }, 1500);
-      });
-    }
-
-    function limpiar() {
-      document.getElementById("mensajeCliente").value = "";
-      document.getElementById("respuesta").textContent = "";
-      document.getElementById("tarjetaResultado").classList.add("oculto");
-    }
-
-    // ===== Historial (guardado en el navegador) =====
-    function guardarEnHistorial(item) {
-      var historial = JSON.parse(localStorage.getItem("historial") || "[]");
-      historial.unshift(item);
-      if (historial.length > 20) historial = historial.slice(0, 20);
-      localStorage.setItem("historial", JSON.stringify(historial));
-      renderHistorial();
-    }
-
-    function renderHistorial() {
-      var historial = JSON.parse(localStorage.getItem("historial") || "[]");
-      var tarjeta = document.getElementById("tarjetaHistorial");
-      var lista = document.getElementById("listaHistorial");
-      lista.innerHTML = "";
-      if (historial.length === 0) { tarjeta.classList.add("oculto"); return; }
-      tarjeta.classList.remove("oculto");
-      historial.forEach(function (item, i) {
-        var fila = document.createElement("button");
-        fila.className = "historial-item";
-        fila.onclick = function () { verDelHistorial(i); };
-        var preview = document.createElement("span");
-        preview.className = "historial-preview";
-        preview.textContent = item.respuesta.slice(0, 90) + (item.respuesta.length > 90 ? "…" : "");
-        var meta = document.createElement("span");
-        meta.className = "historial-meta";
-        meta.textContent = (item.idioma === "en" ? "EN" : "ES") + " · " + item.tono;
-        fila.appendChild(preview);
-        fila.appendChild(meta);
-        lista.appendChild(fila);
-      });
-    }
-
-    function verDelHistorial(i) {
-      var historial = JSON.parse(localStorage.getItem("historial") || "[]");
-      var item = historial[i];
-      if (!item) return;
-      mostrarRespuesta(item.respuesta);
-      document.getElementById("tarjetaResultado").scrollIntoView({ behavior: "smooth" });
-    }
-
-    function limpiarHistorial() {
-      localStorage.removeItem("historial");
-      renderHistorial();
-    }
-
-    // ===== Modo oscuro =====
-    function cambiarTema() {
-      document.body.classList.toggle("tema-oscuro");
-      var oscuro = document.body.classList.contains("tema-oscuro");
-      document.getElementById("btnTema").textContent = oscuro ? "☀️" : "🌙";
-      localStorage.setItem("tema", oscuro ? "oscuro" : "claro");
-    }
-    if (localStorage.getItem("tema") === "oscuro") {
-      document.body.classList.add("tema-oscuro");
-      document.getElementById("btnTema").textContent = "☀️";
-    }
-
-    renderHistorial();
   </script>
 
 </body>
